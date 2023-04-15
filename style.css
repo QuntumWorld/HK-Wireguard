@@ -1,4 +1,5 @@
-html, body {
+html,
+body {
   margin: 0;
   padding: 0;
 }
@@ -11,9 +12,10 @@ body {
   position: absolute;
   width: 900px;
   height: 750px;
-  background: #1F2023;
+  background: #1f2023;
   /*border: 5px solid #111214;*/
-  box-shadow: 0px 0px 150px rgba(0, 0, 0, 0.6), inset 0px -4.5px 0px 1.5px #111214, inset 0px 1.5px 0px 4.5px #303136;
+  box-shadow: 0px 0px 150px rgba(0, 0, 0, 0.6),
+    inset 0px -4.5px 0px 1.5px #111214, inset 0px 1.5px 0px 4.5px #303136;
   border-radius: 24px;
 }
 
@@ -21,7 +23,7 @@ body {
   /* Styling for the menu bar */
   width: 900px;
   height: 75px;
-  background: linear-gradient(180deg, #282A2F 0%, #1C1D20 100%);
+  background: linear-gradient(180deg, #282a2f 0%, #1c1d20 100%);
   box-shadow: 0px 1.5px 0px #303136, inset 0px -3px 0px #111214;
 
   /* Inside auto layout */
@@ -36,7 +38,7 @@ body {
   position: absolute;
   width: 193px;
   height: 19px;
-  font-family: 'Inter';
+  font-family: "Inter";
   font-style: normal;
   font-weight: 800;
   font-size: 27px;
@@ -45,13 +47,13 @@ body {
   align-items: center;
   text-align: center;
   letter-spacing: -0.04em;
-  background: linear-gradient(180deg, #B3BACF 10%, #596073 96.57%);
+  background: linear-gradient(180deg, #b3bacf 10%, #596073 96.57%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
   text-fill-color: transparent;
   border: 1.5px solid rgba(0, 0, 0, 0.54);
-  text-shadow: 0px -1.5px 3px #41444F, 0px 1.5px 4.5px rgba(0, 0, 0, 0.59);
+  text-shadow: 0px -1.5px 3px #41444f, 0px 1.5px 4.5px rgba(0, 0, 0, 0.59);
 }
 
 .menu {
@@ -73,9 +75,10 @@ button {
   box-sizing: border-box;
   width: 105px;
   height: 105px;
-  background: #3B398D;
+  background: #3b398d;
   border: 3px solid #101012;
-  box-shadow: 0px 0px 34.5px rgba(59, 57, 141, 0.81), inset 0px 0px 0px 4.5px rgba(255, 255, 255, 0.2);
+  box-shadow: 0px 0px 34.5px rgba(59, 57, 141, 0.81),
+    inset 0px 0px 0px 4.5px rgba(255, 255, 255, 0.2);
   border-radius: 1498.5px;
   flex: none;
   order: 3;
