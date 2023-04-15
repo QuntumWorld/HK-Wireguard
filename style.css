@@ -1,0 +1,87 @@
+html, body {
+  margin: 0;
+  padding: 0;
+}
+body {
+  /* Styling for the entire page */
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  position: absolute;
+  width: 900px;
+  height: 750px;
+  background: #1F2023;
+  /*border: 5px solid #111214;*/
+  box-shadow: 0px 0px 150px rgba(0, 0, 0, 0.6), inset 0px -4.5px 0px 1.5px #111214, inset 0px 1.5px 0px 4.5px #303136;
+  border-radius: 24px;
+}
+
+.bar_menu {
+  /* Styling for the menu bar */
+  width: 900px;
+  height: 75px;
+  background: linear-gradient(180deg, #282A2F 0%, #1C1D20 100%);
+  box-shadow: 0px 1.5px 0px #303136, inset 0px -3px 0px #111214;
+
+  /* Inside auto layout */
+  flex: none;
+  order: 0;
+  align-self: stretch;
+  flex-grow: 0;
+}
+
+.bar_title {
+  /* Styling for the title of the menu bar */
+  position: absolute;
+  width: 193px;
+  height: 19px;
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 800;
+  font-size: 27px;
+  line-height: 33px;
+  display: flex;
+  align-items: center;
+  text-align: center;
+  letter-spacing: -0.04em;
+  background: linear-gradient(180deg, #B3BACF 10%, #596073 96.57%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  text-fill-color: transparent;
+  border: 1.5px solid rgba(0, 0, 0, 0.54);
+  text-shadow: 0px -1.5px 3px #41444F, 0px 1.5px 4.5px rgba(0, 0, 0, 0.59);
+}
+
+.menu {
+  /* Styling for the main content area */
+  display: flex;
+  flex-direction: row;
+  justify-content: center; /* center the items horizontally */
+  align-items: center; /* center the items verticaly */
+  padding: 0px;
+  width: 900px;
+  height: 675px;
+  flex: none;
+  order: 1;
+  align-self: stretch;
+  flex-grow: 1;
+}
+/* button style*/
+button {
+  box-sizing: border-box;
+  width: 105px;
+  height: 105px;
+  background: #3B398D;
+  border: 3px solid #101012;
+  box-shadow: 0px 0px 34.5px rgba(59, 57, 141, 0.81), inset 0px 0px 0px 4.5px rgba(255, 255, 255, 0.2);
+  border-radius: 1498.5px;
+  flex: none;
+  order: 3;
+  flex-grow: 0;
+}
+
+button:hover {
+  background-color: #3e8e41;
+}
