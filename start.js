@@ -6,6 +6,9 @@ let mainWindow;
 function createWindow() {
   mainWindow = new BrowserWindow({
     resizable: false,
+    // frame: false,
+    transparent: true,
+
     webPreferences: {
       nodeIntegration: true,
       enableRemoteModule: true, // add this line
@@ -19,7 +22,7 @@ function createWindow() {
   mainWindow.webContents.on("did-finish-load", function () {
     const contentSize = mainWindow.getContentSize();
     console.log(contentSize);
-    const width = contentSize[0] + 145;
+    const width = contentSize[0] + 149;
     const height = contentSize[1];
 
     mainWindow.setSize(width, height);
