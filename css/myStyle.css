@@ -1,32 +1,11 @@
-* {
+*,
+p {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
   font-family: "Work Sans", sans-serif;
   text-decoration: none;
   list-style: none;
-}
-
-body::-webkit-scrollbar {
-  width: 12px; /* width of the entire scrollbar */
-}
-
-body::-webkit-scrollbar-track {
-  background: orange; /* color of the tracking area */
-}
-body::-webkit-scrollbar-thumb {
-  background-color: blue; /* color of the scroll thumb */
-  border-radius: 20px; /* roundness of the scroll thumb */
-  border: 3px solid orange; /* creates padding around scroll thumb */
-}
-
-body {
-  scrollbar-width: thin; /* "auto" or "thin" */
-  scrollbar-color: blue orange; /* scroll thumb and track */
-}
-
-*::-webkit-scrollbar {
-  width: 12px;
 }
 
 .container {
@@ -41,9 +20,9 @@ body {
 }
 
 .header {
-  /* padding: 25px 0;
+  padding: 25px 0;
   background: linear-gradient(180deg, #282a2f 0%, #1c1d20 100%);
-  box-shadow: 0px 1.5px 0px #303136, inset 0px -3px 0px #111214; */
+  box-shadow: 0px 1.5px 0px #303136, inset 0px -3px 0px #111214;
 }
 
 .header .container {
@@ -117,19 +96,55 @@ body {
 .body .info h3 {
   color: #b5bccf;
   padding-bottom: 3px;
+  font-size: 20px;
 }
 
 .body .info h5 {
   color: #72798d;
+  font-weight: 600;
 }
 
 .body .on_off img {
   width: 120px;
 }
 
-/*media query about container*/
+.mytable .table_head {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: flex-start;
+  padding: 15px 24px;
+  gap: 15px;
+  color: #72798d;
+  height: 55px;
+  background: #18191c;
+  box-shadow: 0px 1.5px 0px #212327, inset 0px -1.5px 0px #0d0e10;
+}
 
-/* @media (max-width: 767px) {
+.table_body .box {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  color: #b5bccf;
+  padding: 15px 24px;
+  background: #121315;
+}
+
+.table_body .box {
+  border-bottom: 1.5px solid #0d0e10;
+}
+
+.mytable .container {
+  padding: 0;
+  border: 1.5px solid rgba(0, 0, 0, 0.15);
+  box-shadow: 0px -1.5px 0px #18191c, 0px 1.5px 0px #303136,
+    inset 0px 3px 4.5px rgba(0, 0, 0, 0.5);
+  border-radius: 12px;
+}
+
+/* media query about container*/
+
+/* /* @media (max-width: 767px) {
 } */
 
 /**********min***********/
