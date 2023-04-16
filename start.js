@@ -14,7 +14,6 @@ app.whenReady().then(() => {
   });
 
   window.loadFile("index.html");
-  // window.openDevTools();
 
   ipcMain.on("minimize", function (event, data) {
     window.minimize();
@@ -23,11 +22,5 @@ app.whenReady().then(() => {
     window.close();
   });
 
-  // window.webContents.on("did-finish-load", function () {
-  //   const contentSize = window.getContentSize();
-  //   console.log(contentSize);
-  //   const width = contentSize[0];
-  //   const height = contentSize[1];
-  //   window.setSize(width, height);
-  // });
+  
 });
