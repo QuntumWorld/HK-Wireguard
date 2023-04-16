@@ -1,47 +1,33 @@
-const electron = require("electron");
-const { app, BrowserWindow } = electron;
+const { app, BrowserWindow, ipcMain } = require("electron");
 
-let mainWindow;
-
-function createWindow() {
-  mainWindow = new BrowserWindow({
-    resizable: false,
-    // frame: false,
-    transparent: true,
-
+app.whenReady().then(() => {
+  const window = new BrowserWindow({
+    // resizable: false,
+    frame: false,
+    autoHideMenuBar: false,
     webPreferences: {
       nodeIntegration: true,
-      enableRemoteModule: true, // add this line
-      devTools: false, // add this line
+      contextIsolation: false,
+      // enableRemoteModule: true, // add this line
+      devTools: true, // add this line
     },
   });
 
-  mainWindow.setMenuBarVisibility(false); // add this line
-  mainWindow.loadFile("index.html");
+  window.loadFile("index.html");
+  window.openDevTools();
 
-  mainWindow.webContents.on("did-finish-load", function () {
-    const contentSize = mainWindow.getContentSize();
-    console.log(contentSize);
-    const width = contentSize[0] + 149;
-    const height = contentSize[1];
-
-    mainWindow.setSize(width, height);
+  ipcMain.on("minimize", function (event, data) {
+    window.minimize();
   });
-}
-app.on("ready", function () {
-  createWindow();
-});
+  ipcMain.on("Close", function (event, data) {
+    window.close();
+  });
 
-app.on("window-all-closed", function () {
-  if (process.platform !== "darwin") {
-    app.quit();
-  }
+  // window.webContents.on("did-finish-load", function () {
+  //   const contentSize = window.getContentSize();
+  //   console.log(contentSize);
+  //   const width = contentSize[0];
+  //   const height = contentSize[1];
+  //   window.setSize(width, height);
+  // });
 });
-
-app.on("activate", function () {
-  if (mainWindow === null) {
-    createWindow();
-  }
-});
-
-// Code to set up your VPN interface using your VPN library goes here.

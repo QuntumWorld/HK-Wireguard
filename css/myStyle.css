@@ -1,5 +1,13 @@
 *,
-p {
+::after,
+::before,
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
@@ -14,7 +22,8 @@ p {
 }
 
 .header {
-  padding: 25px 0;
+  -webkit-app-region: drag;
+  padding: 20px 0;
   background: linear-gradient(180deg, #282a2f 0%, #1c1d20 100%);
   box-shadow: 0px 1.5px 0px #303136, inset 0px -3px 0px #111214;
 }
@@ -27,6 +36,7 @@ p {
 }
 
 .header .burger_btn {
+  /* -webkit-app-region: no-drag; */
 }
 
 .header .btns {
@@ -42,6 +52,7 @@ p {
 .header .burger_btn img,
 .header .close img,
 .header .mini img {
+  -webkit-app-region: no-drag;
   display: block;
   width: 35px;
 }
@@ -50,6 +61,7 @@ p {
   text-align: center;
   background: linear-gradient(180deg, #282a2f 0%, #1c1d20 100%);
   padding: 20px 0;
+  height: calc(100vh - 75.63px);
 }
 
 .body .top .container {
@@ -69,7 +81,7 @@ p {
   font-family: "Inter";
   font-style: normal;
   font-weight: 800;
-  font-size: 60px;
+  font-size: 50px;
   line-height: 73px;
   color: #b5bccf;
 }
@@ -80,7 +92,7 @@ p {
   font-family: "Rubik";
   font-style: normal;
   font-weight: 400;
-  font-size: 24px;
+  font-size: 20px;
   line-height: 28px;
   color: #72798d;
 }
@@ -101,10 +113,15 @@ p {
 .body .info h5 {
   color: #72798d;
   font-weight: 600;
+  font-size: 13px;
 }
 
 .body .on_off img {
   width: 120px;
+}
+
+.mytable {
+  -webkit-app-region: no-drag;
 }
 
 .mytable .table_head {
@@ -123,9 +140,9 @@ p {
 .table_body {
   display: block;
   overflow-y: scroll;
-  height: 260px;
+  height: 205px;
 }
-
+body::-webkit-scrollbar,
 .table_body::-webkit-scrollbar {
   width: 0px;
 }
