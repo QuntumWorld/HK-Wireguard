@@ -8,8 +8,8 @@ app.whenReady().then(() => {
     webPreferences: {
       nodeIntegration: true,
       contextIsolation: false,
-      // enableRemoteModule: true, // add this line
-      // devTools: true, // add this line for open dev console
+       enableRemoteModule: true, // add this line
+       devTools: true, // add this line for open dev console
     },
   });
 
