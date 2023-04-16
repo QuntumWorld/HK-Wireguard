@@ -48,6 +48,12 @@ h6 {
 .header .title img {
   width: 150px;
 }
+.header .burger_btn img:hover,
+.header .close img:hover,
+.header .mini img:hover {
+  /* filter: invert(1); */
+  filter: contrast(137%);
+}
 
 .header .burger_btn img,
 .header .close img,
@@ -55,6 +61,7 @@ h6 {
   -webkit-app-region: no-drag;
   display: block;
   width: 35px;
+  transition: 0.3s;
 }
 
 .body {
@@ -158,6 +165,11 @@ body::-webkit-scrollbar,
 
 .table_body .box {
   border-bottom: 1.5px solid #0d0e10;
+  transition: 0.3s;
+}
+
+.table_body .box:hover {
+  background-color: #0000009e;
 }
 
 .mytable .container {

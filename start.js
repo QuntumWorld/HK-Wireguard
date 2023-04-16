@@ -14,7 +14,7 @@ app.whenReady().then(() => {
   });
 
   window.loadFile("index.html");
-  // window.openDevTools();
+  window.openDevTools();
 
   ipcMain.on("minimize", function (event, data) {
     window.minimize();
