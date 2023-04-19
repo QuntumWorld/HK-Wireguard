@@ -3,8 +3,8 @@ const { app, BrowserWindow, ipcMain } = require("electron");
 app.whenReady().then(() => {
   const window = new BrowserWindow({
     resizable: false,
-    frame: false,
-    autoHideMenuBar: false,
+    //frame: false,
+    //autoHideMenuBar: false,
     webPreferences: {
       nodeIntegration: true,
       contextIsolation: false,
