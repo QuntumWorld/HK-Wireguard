@@ -7,7 +7,7 @@ const exec = require("child_process").exec;
 const ClientWireguardKeyPair = wireguard.wireguardKeypair.generateKeypair();
 const ClientWgPublicKey = ClientWireguardKeyPair.publicKey;
 const ClientWgPrivateKey = ClientWireguardKeyPair.privateKey;
-
+const onOffImg = document.querySelector(".on_off img");
 let Encapsulation_C = "";
 let SharedSecret = "";
 let timekyberkeygen = "t";
@@ -56,7 +56,7 @@ function connect() {
           const ServerWgPublicKey = AES_GCM.decryptAES_GCM(encrypted, SharedSecret, iv, tag); // decrypt the wg public key using the shared secret
 
           configureWireguardClient(ClientWgPrivateKey, ServerWgPublicKey, "192.168.122.1:52533", "52533", "0.0.0.0/0");
-
+          onOffImg.src = "img/on.svg";
         }
 
       });
@@ -68,8 +68,10 @@ function connect() {
 
 }
 function disconnect() {
+
+  exec("sudo wg-quick down PqWg1");
   console.log("disconnect")
-  executeCommand("wg-quick down PgWg1")
+  onOffImg.src = "img/off.svg";
 }
 
 

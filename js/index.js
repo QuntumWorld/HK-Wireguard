@@ -10,16 +10,18 @@ const onOffImg = document.querySelector(".on_off img");
 // Define a function to toggle the state of the on/off button
 function toggleOnOff() {
   // Get the current state of the button
-  const isOn = onOffImg.src.endsWith("img/on.svg");
+  const isOff = onOffImg.src.endsWith("img/off.svg");
+  console.log(isOff)
 
   // If the button is currently on, set it to off
-  if (isOn) {
+  if (isOff) {
     // Connect to the HK_Client service
      connect();
-    onOffImg.src = "img/off.svg";
+  
   } else {
     // If the button is currently off, set it to on
-    onOffImg.src = "img/on.svg";
+    disconnect()
+   
   }
 }
 
