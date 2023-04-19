@@ -16,11 +16,6 @@ h6 {
   list-style: none;
 }
 
-.wrapper {
-  /* width: 900px;
-  margin: 0 auto; */
-}
-
 .header {
   -webkit-app-region: drag;
   padding: 20px 0;
@@ -35,8 +30,10 @@ h6 {
   width: 100%;
 }
 
-.header .burger_btn {
-  /* -webkit-app-region: no-drag; */
+.logo_title {
+  display: flex;
+  align-items: center;
+  gap: 0;
 }
 
 .header .btns {

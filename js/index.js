@@ -9,7 +9,9 @@ const onOffImg = document.querySelector(".on_off img");
 
 onOffImg.addEventListener("click", function () {
   if (onOffImg.src.endsWith("img/off.svg")) {
+    console.log("trying to connect")
     onOffImg.src = "img/on.svg";
+    console.log("trying to connected")
   } else {
     onOffImg.src = "img/off.svg";
   }
