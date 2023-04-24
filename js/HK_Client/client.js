@@ -23,14 +23,14 @@ let theServerKyberPK = "";// wait for the server to send the public key
 
 function connect() {
   console.log("connect")
-  executeCommand('/home/marrok/Desktop/Hybrid_Kyber_Wireguard/TheClient/kyberWithC/avx2/example')
+  executeCommand('/home/marrok/Desktop/HK-Wireguard/js/HK_Client/kyberWithC/avx2/example')
     .then((stdout) => {
       keypair = stdout.split('@@');
       timekyberkeygen = keypair[0];
       client_publickeyKyber = Buffer.from(keypair[1], 'hex')
       client_privatekeyKyber = Buffer.from(keypair[2], 'hex')
 
-      const client = net.createConnection({ host: "192.168.122.1", port: 8080, highWaterMark: 4000 }, async () => {
+      const client = net.createConnection({ host: "206.189.18.1", port: 8080, highWaterMark: 4000 }, async () => {
 
         client.write(Buffer.from(client_publickeyKyber)); // client start send the  kyber public key to the server
       });
@@ -55,7 +55,7 @@ function connect() {
 
           const ServerWgPublicKey = AES_GCM.decryptAES_GCM(encrypted, SharedSecret, iv, tag); // decrypt the wg public key using the shared secret
 
-          configureWireguardClient(ClientWgPrivateKey, ServerWgPublicKey, "192.168.122.1:52533", "52533", "0.0.0.0/0");
+          configureWireguardClient(ClientWgPrivateKey, ServerWgPublicKey, "206.189.18.1:52533", "52533", "0.0.0.0/0");
           onOffImg.src = "img/on.svg";
         }
 
