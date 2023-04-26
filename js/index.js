@@ -37,7 +37,7 @@ const boxElements = document.querySelectorAll(".box");
 boxElements.forEach((box, index) => {
   // Get the server information for the current box
   const server = servers.servers[index];
-  
+
   // Add an event listener to the box
   box.addEventListener("click", () => {
     // Update the container element with the corresponding server information
@@ -67,11 +67,11 @@ boxElements.forEach((box, index) => {
                 <img src="img/off.svg" alt=""  id="on_off_button" />
               </div>
               <div class="upload">
-                <h3>6.4 MB/s</h3>
+                <h3>${server.upload_speed} MB/s</h3>
                 <h5>UPLOAD</h5>
               </div>
               <div class="download">
-                <h3>9.7 MB/s</h3>
+                <h3>${server.download_speed}MB/s</h3>
                 <h5>DOWNLOAD</h5>
               </div>
             </div>
@@ -93,12 +93,12 @@ function toggleOnOff() {
   // If the button is currently on, set it to off
   if (isOff) {
     // Connect to the HK_Client service
-     connect();
-  
+    connect();
+
   } else {
     // If the button is currently off, set it to on
     disconnect()
-   
+
   }
 }
 
