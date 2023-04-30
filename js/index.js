@@ -1,12 +1,18 @@
-const { ipcRenderer } = require("electron");
+const { ipcRenderer ,Menu } = require("electron");
+
+
 
 const servers = require('./js/servers');
 const { connect, disconnect } = require("./js/HK_Client/client");
+
 
 const mini = document.querySelector(".btns .mini");
 const closeWin = document.querySelector(".btns .close img");
 
 const onOffImg = document.querySelector(".on_off img");
+const burgerBtn = document.querySelector(".burger_btn");
+const hideDrop =document.querySelector("#hideDrop");
+
 
 
 
@@ -101,6 +107,31 @@ function toggleOnOff() {
 
   }
 }
+function showDrop(){
+  burgerBtn.innerHTML = "";
+  const htmlForum=`
+  <div id="drop_menu">
+  <form action="#">
+    <input type="text" placeholder="Interface name" />
+    <input type="text" placeholder="Subnet range" />
+    <button id= "hideDrop">Close</button>
+  </form>
+</div>
+  `
+ 
+  burgerBtn.innerHTML=htmlForum
+  document.addEventListener("DOMContentLoaded", function() {
+    hideDrop.addEventListener('click',hideDropMenu)
+  });
+  
+}
+
+function hideDropMenu(){
+  console.log("test")
+  const  temphtml=`<img src="img/Frame 462.png" alt="">`
+  burgerBtn.innerHTML=temphtml;
+
+}
 
 // Add an event listener to the on/off button
 onOffImg.addEventListener("click", toggleOnOff);
@@ -108,8 +139,15 @@ onOffImg.addEventListener("click", toggleOnOff);
 // Add an event listener to the close button
 closeWin.addEventListener("click", () => {
   // Send a message to the main process to close the window
+  
   ipcRenderer.send("Close");
 });
+
+
+
+burgerBtn.addEventListener('click',showDrop);
+
+
 
 // Add an event listener to the minimize button
 mini.addEventListener("click", () => {

@@ -178,6 +178,51 @@ body::-webkit-scrollbar,
   width: 100%;
 }
 
+
+
+/* Style for the burger button */
+.burger_btn {
+  position: relative;
+  width: 30px;
+  height: 30px;
+  cursor: pointer;
+}
+
+#drop_menu {
+  position: absolute;
+  top: 50px;
+  left: 10%;
+  width: 200px;
+  background-color: white;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  z-index: 100;
+}
+
+#drop_menu input[type="text"] {
+  display: block;
+  margin: 10px;
+  padding: 5px;
+  width: 80%;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+  font-size: 16px;
+}
+
+#drop_menu button {
+  display: block;
+  margin: 10px;
+  padding: 5px;
+  width: 80%;
+  background-color: #4CAF50;
+  color: white;
+  border-radius: 4px;
+  border: none;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+
+
 /* media query about container*/
 
 /* /* @media (max-width: 767px) {
